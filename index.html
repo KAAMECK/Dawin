@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Invitation — Dawin</title>
+
+  <!-- Polices : Playfair Display (élégante) + Poppins (moderne & arrondie) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Palette inspirée Guinée-Bissau, adoucie */
+      --bg: #fbf7f2;             /* fond doux */
+      --card: #ffffff;
+      --text: #222;
+      --muted: #7a6f6f;
+      --accent-deep: #a42b2b;   /* riche (inspiré rouge drapeau) */
+      --accent-soft: #f3d66a;   /* jaune doux */
+      --accent-green: #4aa374;  /* vert doux */
+      --border-img: url('assets/pano-di-pinti.png'); /* placeholder bordure */
+      --radius: 12px;
+      --max-w: 820px;
+    }
+
+    /* Reset minimal */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Bordure Pano-di-pinti (round) */
+    .outer {
+      min-height:100vh;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      background-image: var(--border-img);
+      background-repeat: round;
+      background-size: 40px; /* change si nécessaire */
+      /* fallback si pas d'image */
+      border: 12px solid rgba(0,0,0,0.03);
+    }
+
+    .page {
+      width:100%;
+      max-width:var(--max-w);
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+      border-radius:18px;
+      box-shadow: 0 18px 50px rgba(20,20,20,0.08);
+      overflow:hidden;
+      margin-bottom: 40px;
+    }
+
+    /* HEADER / HERO */
+    .hero {
+      padding: 28px 22px;
+      text-align:center;
+      position:relative;
+      background: var(--card);
+    }
+
+    .logo {
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:8px;
+    }
+    .logo img {
+      height:46px; /* remplace par ton PNG (transparent conseillé) */
+      display:block;
+    }
+
+    .meta {
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      margin:8px 0 14px;
+    }
+
+    .meta .line {
+      width:80%;
+      height:1px;
+      background:rgba(0,0,0,0.06);
+      margin:12px auto 0;
+    }
+
+    .title {
+      font-family: "Playfair Display", serif;
+      font-size:34px;
+      line-height:1.02;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--accent-deep);
+      margin:6px 0;
+    }
+
+    .quote {
+      margin-top:12px;
+      font-style:italic;
+      color:var(--muted);
+      max-width:640px;
+      margin-left:auto;
+      margin-right:auto;
+      font-size:15px;
+    }
+
+    /* CARD image */
+    .card {
+      margin:18px auto 8px;
+      max-width:700px;
+      border-radius:14px;
+      overflow:hidden;
+      background:var(--card);
+      box-shadow: 0 10px 30px rgba(10,10,10,0.04);
+    }
+    .card img {
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:cover;
+      background: linear-gradient(180deg, #eee, #ddd);
+      transition: transform .9s ease;
+      will-change: transform, opacity;
+    }
+
+    .tag {
+      display:inline-block;
+      background:rgba(255,255,255,0.95);
+      border-radius:8px;
+      padding:6px 10px;
+      margin:12px;
+      font-weight:600;
+      font-size:13px;
+      color:var(--accent-deep);
+      box-shadow: 0 6px 18px rgba(10,10,10,0.03);
+    }
+
+    /* Section texte info */
+    .section {
+      padding:18px 22px 28px;
+      text-align:center;
+      color:var(--text);
+    }
+
+    .lead {
+      font-family: "Playfair Display", serif;
+      font-size:18px;
+      color:#444;
+      max-width:640px;
+      margin:8px auto 18px;
+    }
+
+    .info-grid {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:10px auto;
+      max-width:640px;
+    }
+    .info-card {
+      background: #fff;
+      border-radius:10px;
+      padding:14px 18px;
+      min-width:160px;
+      box-shadow: 0 6px 18px rgba(10,10,10,0.03);
+      text-align:left;
+    }
+    .info-card small { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:1px; }
+    .info-card strong { display:block; margin-top:6px; color:var(--accent-deep); font-size:15px; }
+
+    /* Vision & avenir */
+    .two-col {
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+      align-items:start;
+      max-width:820px;
+      margin:0 auto 30px;
+      padding:0 18px;
+    }
+    .two-col .txt { padding:12px; }
+    .two-col .txt h3 { color:var(--accent-deep); font-family:"Playfair Display", serif; letter-spacing:1px; font-size:18px; margin:6px 0 12px;}
+    .two-col .txt p { color:#555; line-height:1.6; }
+
+    .two-col .img {
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(10,10,10,0.04);
+    }
+    .two-col .img img { width:100%; height:auto; display:block; }
+
+    /* RSVP final */
+    .rsvp {
+      background: linear-gradient(180deg, rgba(250,245,240,0.9), rgba(255,255,255,0.95));
+      padding:22px;
+      margin:18px;
+      border-radius:14px;
+      text-align:center;
+    }
+    .rsvp h3 { font-family:"Playfair Display", serif; color:var(--accent-deep); margin:0 0 8px; }
+    .rsvp p { color:#666; margin:0 0 12px; }
+
+    .rsvp form { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+    .rsvp input[type="text"]{
+      padding:12px 14px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.08);
+      min-width:260px;
+      font-size:14px;
+    }
+    .rsvp button{
+      padding:12px 18px;
+      background:var(--accent-deep);
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      transition:transform .15s ease;
+    }
+    .rsvp button:active{ transform:scale(.98) }
+
+    /* BOUTON FIXE BAS (CTA) */
+    .bottom-action {
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      display:flex;
+      justify-content:center;
+      pointer-events:auto;
+      z-index:999;
+    }
+    .cta {
+      background: linear-gradient(90deg, var(--accent-green), var(--accent-deep));
+      color: #fff;
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:700;
+      box-shadow: 0 10px 30px rgba(10,10,10,0.12);
+      text-decoration:none;
+    }
+
+    /* Effects - fade slide */
+    .reveal { opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s ease; }
+    .reveal.show { opacity:1; transform:translateY(0); }
+
+    /* Responsive */
+    @media(min-width:900px){
+      .two-col { grid-template-columns: 46% 54%; }
+      .title{font-size:46px}
+      .hero{padding:36px 32px;}
+      .card{max-width:760px}
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <main class="page" role="main" aria-label="Invitation Dawin">
+
+      <!-- HERO -->
+      <header class="hero">
+        <div class="logo">
+          <!-- Place ton PNG logo ici -->
+          <img src="assets/logo.jpg" alt="Dawin" />
+        </div>
+
+        <div class="meta">15 décembre 2025 · 19h30
+          <div class="line" aria-hidden="true"></div>
+        </div>
+
+        <h1 class="title">BENVINDU NA<br>GUINÉ-BISSAU</h1>
+
+        <div class="quote">"Une soirée d'exception pour découvrir, célébrer et investir dans l'avenir."</div>
+      </header>
+
+      <!-- IMAGE PRINCIPALE (remplace src par ta photo) -->
+      <figure class="card reveal" id="hero-image">
+        <img src="assets/placeholder-paysage.jpg" alt="Photo paysage (remplace par ta photo)" />
+      </figure>
+      <div style="text-align:center" class="reveal"><span class="tag">Paysage</span></div>
+
+      <!-- SECTION 2 — Présentation -->
+      <section class="section reveal" id="presentation">
+        <div class="lead">L'agence DAWIN vous invite à une <strong>soirée culturelle exceptionnelle</strong>.</div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <small>Date</small>
+            <strong>Lundi 15 Décembre</strong>
+          </div>
+          <div class="info-card">
+            <small>Lieu</small>
+            <strong>Restaurant A — Dakar, Almadies</strong>
+          </div>
+          <div class="info-card">
+            <small>Heure</small>
+            <strong>19h30</strong>
+          </div>
+        </div>
+
+        <p style="max-width:720px; margin:16px auto; color:#5b5b5b">
+          Une immersion dans l'âme de la Guinée-Bissau à travers la <strong>musique</strong>, la <strong>danse</strong> et la <strong>gastronomie</strong>.
+        </p>
+      </section>
+
+      <!-- SECTION 3 — Vision & Avenir -->
+      <section class="two-col" id="vision">
+        <div class="img reveal">
+          <img src="assets/placeholder-culture.jpg" alt="Culture — remplace par ta photo" />
+        </div>
+        <div class="txt reveal">
+          <h3>Vision & avenir</h3>
+          <p>
+            Cette soirée met en lumière le potentiel touristique et les opportunités d'investissement en Guinée-Bissau, un pays riche en trésors naturels et humains qui demandent à être valorisés.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 4 — Nature -->
+      <section class="section reveal" id="nature">
+        <div class="card" style="max-width:520px;margin:12px auto 6px">
+          <img src="assets/placeholder-nature.jpg" alt="Nature — remplace par ta photo" />
+        </div>
+        <div style="text-align:center; max-width:640px; margin:8px auto 20px;">
+          <p style="color:#555">
+            Explorez les paysages, la mer et les traditions — la Guinée-Bissau comme vous ne l'avez jamais vue.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 5 — RSVP -->
+      <section class="rsvp reveal" id="rsvp">
+        <h3>Votre présence est essentielle.</h3>
+        <p><strong>Réponse souhaitée avant le 30 novembre 2025</strong></p>
+
+        <!-- Simple formulaire (envoie par mail via mailto: — personnalise l'email) -->
+        <form onsubmit="return sendRSVP(event)">
+          <input type="text" id="rsvp-name" placeholder="Votre nom & prénom" aria-label="Votre nom et prénom" required />
+          <button type="submit">Confirmer ma présence</button>
+        </form>
+        <p style="margin-top:10px;color:var(--muted);font-size:13px">Nous vous remercions — un e-mail de confirmation vous sera envoyé.</p>
+      </section>
+
+      <!-- Placeholder final / pied -->
+      <div style="height:110px"></div>
+    </main>
+  </div>
+
+  <!-- BOUTON BAS (accès rapide) -->
+  <div class="bottom-action">
+    <a class="cta" href="#rsvp">Accéder directement</a>
+  </div>
+
+  <!-- Musique autoplay (loop). Place assets/music.mp3 ou change le src -->
+  <audio id="bg-music" src="assets/music.mp3" loop></audio>
+
+  <script>
+    // -------- animations intersection observer (fade/slide) --------
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // -------- music: play on first user interaction for mobile compatibility --------
+    const music = document.getElementById('bg-music');
+    music.volume = 0.18; // volume faible pour playback agréable
+    const playMusic = () => { music.play().catch(()=>{}); document.removeEventListener('click', playMusic); }
+    document.addEventListener('click', playMusic, { once: true });
+
+    // -------- RSVP handler (mailto: template) --------
+    function sendRSVP(e){
+      e.preventDefault();
+      const name = document.getElementById('rsvp-name').value.trim();
+      if(!name) return alert('Veuillez indiquer votre nom et prénom.');
+      // TODO: remplace email@domaine.com par l'adresse réelle de réception
+      const to = 'email@domaine.com';
+      const subject = encodeURIComponent('RSVP — Dawin — Présence confirmée');
+      const body = encodeURIComponent('Nom et Prénom : ' + name + '%0AJe confirme ma présence à la soirée.');
+      // open mail client
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      return false;
+    }
+
+    // -------- Quick accessibility: keyboard focus for CTA --------
+    document.querySelector('.cta').addEventListener('keydown', (ev) => {
+      if(ev.key === 'Enter') document.querySelector('.cta').click();
+    });
+  </script>
+</body>
+</html>
