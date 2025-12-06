@@ -78,7 +78,7 @@
       margin-bottom:8px;
     }
     .logo img {
-      height:90px; /* remplace par ton PNG (transparent conseillé) */
+      height:46px; /* remplace par ton PNG (transparent conseillé) */
       display:block;
     }
 
@@ -266,16 +266,6 @@
       .hero{padding:36px 32px;}
       .card{max-width:760px}
     }
-    @media(max-width:600px){
-        #hero-image {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-        #hero-image img {
-        border-radius: 10px;
-    }
-    }
-  
   </style>
 </head>
 <body>
