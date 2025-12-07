@@ -190,6 +190,80 @@ p {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
+/* ---------- Ajustements responsive et lisibilité ---------- */
+
+/* Container un peu flexible sur petits écrans */
+.container {
+  max-width: 430px;
+  width: 94%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Titre responsive : évite qu'il prenne toute la hauteur sur mobile */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(24px, 6.5vw, 36px); /* s'adapte entre 24 et 36px */
+  line-height: 1.05;
+  margin: 14px 0 8px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+/* Sous-titre plus compact et moins de marge */
+.subtitle {
+  font-size: clamp(13px, 3.6vw, 16px);
+  margin: 0 18px 12px;
+  font-style: italic;
+  color: #4b4b4b;
+  line-height: 1.3;
+}
+
+/* Paragraphes : meilleur contrôle de la largeur et interlignage */
+p {
+  text-align: center;
+  margin: 0 auto 14px;
+  font-size: clamp(15px, 4.2vw, 17px);
+  line-height: 1.45;
+  width: 100%;
+  padding: 0 16px;
+  max-width: 760px;
+  white-space: normal;
+  box-sizing: border-box;
+}
+
+/* Limite la hauteur des images sur mobile pour ne pas écraser le contenu */
+.img-wrap img {
+  width: 100%;
+  height: auto;
+  max-height: 260px; /* limite pour éviter les images trop grandes */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Section title centre et moins d'espace vertical */
+.section-title {
+  margin: 14px 18px 8px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* RSVP : champs plus compacts sur petit écran */
+.rsvp input {
+  width: 88%;
+  max-width: 380px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Si tu veux un peu plus d'air sur grand écran */
+@media (min-width: 900px) {
+  .container { max-width: 720px; }
+  h1 { font-size: 48px; line-height:1; }
+  .img-wrap img { max-height: 360px; }
+  p { font-size: 18px; }
+}
 </style>
 </head>
 
