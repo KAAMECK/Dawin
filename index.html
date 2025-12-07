@@ -10,18 +10,18 @@
 
 <style>
 :root {
-  --rose: #ff36ab;       /* Rose lumineux */
-  --violet: #850885;     /* Violet profond */
-  --doré: #d6b370;       /* Doré doux */
+  --rose: #ff36ab;
+  --violet: #850885;
+  --doré: #d6b370;
   --fond-blanc: #ffffff;
   --texte-principal: #1a1a1a;
   --gris-muted: #7d7d7d;
 }
 
 body {
-  margin:0;
+  margin: 0;
   background: var(--fond-blanc);
-  font-family:"Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif;
   color: var(--texte-principal);
 }
 
@@ -37,202 +37,135 @@ body {
 }
 
 .container {
-  max-width:430px;
-  margin:0 auto;
+  max-width: 430px;
+  margin: 0 auto;
   background: var(--fond-blanc);
 }
 
 header {
-  text-align:center;
-  padding:26px 0 10px;
+  text-align: center;
+  padding: 26px 0 10px;
 }
 
 header img {
-  width:120px;
-  margin:0 auto;
-  display:block;
+  width: 120px;
+  margin: 0 auto;
+  display: block;
 }
 
 .date {
-  font-family:"Poppins", sans-serif;
-  font-size:12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
   color: var(--gris-muted);
-  letter-spacing:1px;
-  margin-top:10px;
+  letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 h1 {
-  text-align:center;
-  font-family:"Playfair Display", serif;
-  font-size:28px;
-  margin:18px 0 10px;
-  line-height:1.1;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin: 18px 0 10px;
+  line-height: 1.1;
 }
 
 .subtitle {
-  text-align:center;
-  font-size:15px;
-  color:#4b4b4b;
-  margin:0 24px;
-  font-style:italic;
+  text-align: center;
+  font-size: 15px;
+  color: #4b4b4b;
+  margin: 0 24px;
+  font-style: italic;
 }
 
-.block {
-  margin-top:24px;
-}
+.block { margin-top: 24px; }
 
 .img-wrap {
-  width:100%;
-  position:relative;
+  width: 100%;
+  position: relative;
 }
 
 .img-wrap img {
-  width:100%;
-  max-height:220px;
-  object-fit:cover;
-  border-radius:8px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-@media (min-width:768px) {
-  .img-wrap img { max-height:320px; }
+@media (min-width: 768px) {
+  .img-wrap img { max-height: 320px; }
 }
 
 .tag {
-  position:absolute;
-  left:14px;
-  bottom:14px;
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
   background: var(--fond-blanc);
-  padding:6px 10px;
-  font-family:"Poppins", sans-serif;
-  font-size:11px;
-  border-radius:6px;
-  font-weight:600;
-}
-
-.text-center { text-align:center; }
-
-.title-small {
-  font-size:20px;
-  font-family:"Playfair Display", serif;
-  margin:20px 20px 10px;
-}
-
-p {
-  font-size:17px;
-  margin:0 22px 14px;
-  line-height:1.45;
-}
-
-.info-box {
-  width:100%;
-  padding:10px 0;
-}
-
-.info-item {
-  text-align:center;
-  margin:10px 0;
-}
-
-.info-label {
-  font-family:"Poppins", sans-serif;
-  font-size:11px;
-  text-transform:uppercase;
-  color: var(--gris-muted);
-}
-
-.info-label svg {
-  vertical-align:middle;
-  margin-bottom:2px;
-}
-
-.info-value {
-  font-family:"Poppins", sans-serif;
-  font-size:14px;
-  margin-top:4px;
-  font-weight:600;
-  color: var(--violet);
-}
-
-.section-title {
-  margin:16px 22px 10px;
-  font-family:"Playfair Display", serif;
-  font-size:18px;
-  color: var(--violet);
-}
-
-.badge-inline {
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background: var(--doré);
-  padding:6px 10px;
-  border-radius:6px;
-  font-family:"Poppins", sans-serif;
-  font-size:12px;
-  font-weight:600;
-  color: var(--fond-blanc);
-  box-shadow:0 2px 6px rgba(0,0,0,0.08);
-}
-
-.badge-inline svg {
-  width:16px;
-  height:16px;
-  display:block;
-}
-
-.rsvp {
-  text-align:center;
-  padding:30px 0 40px;
-}
-
-.rsvp h3 {
-  font-family:"Playfair Display", serif;
-  color: var(--violet);
-  margin-bottom:6px;
-}
-
-.rsvp small {
-  color: var(--gris-muted);
-  font-family:"Poppins", sans-serif;
-}
-
-input {
-  width:70%;
-  padding:12px;
-  border-radius:6px;
-  border:1px solid #ccc;
-  margin-top:18px;
-}
-
-button {
-  margin-top:14px;
-  padding:12px 20px;
-  background: var(--violet);
-  border:none;
-  color:#fff;
-  border-radius:6px;
-  font-weight:600;
-  font-family:"Poppins", sans-serif;
-}
-
-.no-wrap {
-  white-space: nowrap;   /* empêche le retour à la ligne */
-}
-
-.text-center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  padding: 6px 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
 p {
   text-align: center;
   margin: 0 auto 14px;
   font-size: 17px;
-  line-height: 1.45;
-  max-width: 90%; /* évite que le texte touche les bords */
+  line-height: 1.5;
+  width: 100%;
+  padding: 0 18px;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.info-box {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.info-item {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.info-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--gris-muted);
+}
+
+.info-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--violet);
+}
+
+.section-title {
+  margin: 16px 22px 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--violet);
+  text-align: center;
+}
+
+.rsvp {
+  text-align: center;
+  padding: 30px 0 40px;
+}
+
+.rsvp h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--violet);
+  margin-bottom: 6px;
+}
+
+.rsvp small {
+  color: var(--gris-muted);
+  font-family: "Poppins", sans-serif;
 }
 
 .rsvp input {
@@ -257,20 +190,17 @@ p {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-
 </style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- LOGO + DATE -->
   <header>
     <img src="assets/logo.png" alt="Dawin logo">
     <div class="date">15 DÉCEMBRE 2025 • 19H30</div>
   </header>
 
-  <!-- LIEU EN HAUT -->
   <div class="info-box">
     <div class="info-item">
       <div class="info-label">
@@ -282,21 +212,15 @@ p {
     </div>
   </div>
 
-  <!-- TITRE -->
   <h1>BENVINDU NA<br>GUINÉ-BISSAU</h1>
   <p class="subtitle">"Une soirée d'exception pour découvrir, célébrer et investir dans l'avenir."</p>
 
-  <!-- PAYSAGE -->
   <div class="img-wrap">
     <img src="assets/paysage.jpg" alt="">
   </div>
 
-  <!-- TEXTE 1 -->
- <p class="text-center no-wrap">
-  <strong>DAWIN</strong> vous invite à une soirée culturelle exceptionnelle.
-</p>
+  <p><strong>DAWIN</strong> vous invite à une soirée culturelle exceptionnelle.</p>
 
-  <!-- TEXTE 2 -->
   <p>
     Une immersion dans l'âme de la Guinée-Bissau à travers la 
     <strong class="musique">musique</strong>, 
@@ -305,7 +229,6 @@ p {
     Découvrez les talents locaux et les traditions qui font la richesse de ce pays.
   </p>
 
-  <!-- CULTURE -->
   <div class="block img-wrap">
     <img src="assets/culture.jpg" alt="">
   </div>
@@ -316,23 +239,21 @@ p {
     le pays regorge de trésors naturels et humains qui ne demandent qu'à être valorisés.
   </p>
 
-  <!-- IMAGE 3 -->
   <div class="block img-wrap">
     <img src="assets/nature.jpg" alt="">
   </div>
 
-  <!-- RSVP -->
-<div class="rsvp">
-  <h3>Votre présence est essentielle.</h3>
-  <small>Réponse souhaitée avant le <strong>12 Décembre 2025</strong></small>
+  <div class="rsvp">
+    <h3>Votre présence est essentielle.</h3>
+    <small>Réponse souhaitée avant le <strong>12 Décembre 2025</strong></small>
 
-  <form id="rsvpForm">
-    <input id="nom" type="text" placeholder="Votre nom & prénom" required>
-    <input id="email" type="email" placeholder="Votre adresse mail" required>
-    <input id="tel" type="tel" placeholder="Votre numéro de téléphone" required>
-    <button type="submit">Confirmer ma présence</button>
-  </form>
-</div>
+    <form id="rsvpForm">
+      <input id="nom" type="text" placeholder="Votre nom & prénom" required>
+      <input id="email" type="email" placeholder="Votre adresse mail" required>
+      <input id="tel" type="tel" placeholder="Votre numéro de téléphone" required>
+      <button type="submit">Confirmer ma présence</button>
+    </form>
+  </div>
 
 <script>
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
@@ -347,7 +268,6 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     return;
   }
 
-  // ⚠️ Remplace par ton URL Google Apps Script
   fetch("TON_URL_SCRIPT_GOOGLE", {
     method: "POST",
     body: JSON.stringify({ nom: nom, email: email, tel: tel }),
