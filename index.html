@@ -9,34 +9,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
-  --rouge-logo: #b82022;       /* Rouge profond */
-  --rose-violet: #a84c7c;      /* Rose violacé élégant */
-  --doré-doux: #d6b370;        /* Doré doux, chaleureux */
-  --fond-blanc: #ffffff;       /* Fond pur */
-  --texte-principal: #1a1a1a;  /* Noir doux */
-  --gris-muted: #7d7d7d;       /* Texte secondaire */
+  --rose: #ff36ab;       /* Rose lumineux */
+  --violet: #850885;     /* Violet profond */
+  --doré: #d6b370;       /* Doré doux */
+  --fond-blanc: #ffffff;
+  --texte-principal: #1a1a1a;
+  --gris-muted: #7d7d7d;
 }
 
-body{
+body {
   margin:0;
-  background:#ffffff;
+  background: var(--fond-blanc);
   font-family:"Cormorant Garamond", serif;
-  color:#000;
+  color: var(--texte-principal);
 }
 
-.musique {
-  color: #b82022; /* Rouge profond */
-}
-
-.danse {
-  color: #850885; /* Rose violacé élégant */
-}
-
-.gastronomie {
-  color: #ff36ab; /* Doré doux */
-}
+.musique { color: var(--rose); }
+.danse { color: var(--violet); }
+.gastronomie { color: var(--doré); }
 
 .musique:hover,
 .danse:hover,
@@ -45,32 +36,32 @@ body{
   cursor: default;
 }
 
-.container{
+.container {
   max-width:430px;
   margin:0 auto;
-  background:#fff;
+  background: var(--fond-blanc);
 }
 
-header{
+header {
   text-align:center;
   padding:26px 0 10px;
 }
 
-header img{
+header img {
   width:120px;
   margin:0 auto;
   display:block;
 }
 
-.date{
+.date {
   font-family:"Poppins", sans-serif;
   font-size:12px;
-  color:#7d7d7d;
+  color: var(--gris-muted);
   letter-spacing:1px;
   margin-top:10px;
 }
 
-h1{
+h1 {
   text-align:center;
   font-family:"Playfair Display", serif;
   font-size:28px;
@@ -78,7 +69,7 @@ h1{
   line-height:1.1;
 }
 
-.subtitle{
+.subtitle {
   text-align:center;
   font-size:15px;
   color:#4b4b4b;
@@ -86,41 +77,32 @@ h1{
   font-style:italic;
 }
 
-.block{
+.block {
   margin-top:24px;
 }
 
-.img-wrap{
+.img-wrap {
   width:100%;
   position:relative;
 }
 
-.img-wrap img{
-  width:100%;
-  display:block;
-}
 .img-wrap img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
 }
 
-.card, .img-wrap {
-  border: 2px solid var(--gold);
+@media (min-width:768px) {
+  .img-wrap img { max-height:320px; }
 }
 
-@media (min-width: 768px) {
-  .img-wrap img {
-    max-height: 320px;
-  }
-}
-.tag{
+.tag {
   position:absolute;
   left:14px;
   bottom:14px;
-  background:#ffffff;
+  background: var(--fond-blanc);
   padding:6px 10px;
   font-family:"Poppins", sans-serif;
   font-size:11px;
@@ -128,84 +110,94 @@ h1{
   font-weight:600;
 }
 
-.text-center{
-  text-align:center;
-}
+.text-center { text-align:center; }
 
-.title-small{
+.title-small {
   font-size:20px;
   font-family:"Playfair Display", serif;
   margin:20px 20px 10px;
 }
 
-p{
+p {
   font-size:17px;
   margin:0 22px 14px;
   line-height:1.45;
 }
 
-.info-box{
+.info-box {
   width:100%;
-  padding:20px 0 10px;
+  padding:10px 0;
 }
 
-.info-item{
+.info-item {
   text-align:center;
-  margin:14px 0;
+  margin:10px 0;
 }
 
-.info-label{
+.info-label {
   font-family:"Poppins", sans-serif;
   font-size:11px;
   text-transform:uppercase;
-  color:#7d7d7d;
+  color: var(--gris-muted);
 }
 
-.info-value{
+.info-label svg {
+  vertical-align:middle;
+  margin-bottom:2px;
+}
+
+.info-value {
   font-family:"Poppins", sans-serif;
   font-size:14px;
   margin-top:4px;
   font-weight:600;
-  color:#b82022;
-}
-
-.section-title{
-  margin:16px 22px 10px;
-  font-family:"Playfair Display", serif;
-  font-size:18px;
-  color:#b82022;
+  color: var(--violet);
 }
 
 .section-title {
-  color: var(--rose-violet);
+  margin:16px 22px 10px;
+  font-family:"Playfair Display", serif;
+  font-size:18px;
+  color: var(--violet);
 }
+
 .badge-inline {
-  background: var(--doré-doux);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background: var(--doré);
+  padding:6px 10px;
+  border-radius:6px;
+  font-family:"Poppins", sans-serif;
+  font-size:12px;
+  font-weight:600;
   color: var(--fond-blanc);
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
 }
 
-.info-label svg {
-  vertical-align: middle;
-  margin-bottom: 2px;
+.badge-inline svg {
+  width:16px;
+  height:16px;
+  display:block;
 }
 
-.rsvp{
+.rsvp {
   text-align:center;
   padding:30px 0 40px;
 }
 
-.rsvp h3{
+.rsvp h3 {
   font-family:"Playfair Display", serif;
-  color:#b82022;
+  color: var(--violet);
   margin-bottom:6px;
 }
 
-.rsvp small{
-  color:#7d7d7d;
+.rsvp small {
+  color: var(--gris-muted);
   font-family:"Poppins", sans-serif;
 }
 
-input{
+input {
   width:70%;
   padding:12px;
   border-radius:6px;
@@ -213,10 +205,10 @@ input{
   margin-top:18px;
 }
 
-button{
+button {
   margin-top:14px;
   padding:12px 20px;
-  background:#b82022;
+  background: var(--violet);
   border:none;
   color:#fff;
   border-radius:6px;
@@ -224,25 +216,9 @@ button{
   font-family:"Poppins", sans-serif;
 }
 
-.badge-inline {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #ffffff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: #000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+.no-wrap {
+  white-space: nowrap;   /* empêche le retour à la ligne */
 }
-.badge-inline svg {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
-
 
 </style>
 </head>
@@ -256,52 +232,47 @@ button{
     <div class="date">15 DÉCEMBRE 2025 • 19H30</div>
   </header>
 
+  <!-- LIEU EN HAUT -->
+  <div class="info-box">
+    <div class="info-item">
+      <div class="info-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#7d7d7d" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+        </svg>
+      </div>
+      <div class="info-value">Dakar</div>
+    </div>
+  </div>
+
   <!-- TITRE -->
   <h1>BENVINDU NA<br>GUINÉ-BISSAU</h1>
   <p class="subtitle">"Une soirée d'exception pour découvrir, célébrer et investir dans l'avenir."</p>
 
   <!-- PAYSAGE -->
   <div class="img-wrap">
-  <img src="assets/paysage.jpg" alt="">
-  <div style="position:absolute; left:14px; bottom:14px;">
+    <img src="assets/paysage.jpg" alt="">
   </div>
-</div>
 
   <!-- TEXTE 1 -->
-  <p class="text-center">
-    L'agence DAWIN vous invite à une<br>
-    <strong>soirée culturelle exceptionnelle.</strong>
-  </p>
-
-  <!-- INFOS -->
-  <div class="info-box">
-    <div class="info-item">
-  <div class="info-label">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#7d7d7d" viewBox="0 0 24 24">
-      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-    </svg>
-  </div>
-    <div class="info-value">Dakar</div>
-    </div>
-  </div>
-
-  <p>
-  Une immersion dans l'âme de la Guinée-Bissau à travers la 
-  <strong class="musique">musique</strong>, 
-  la <strong class="danse">danse</strong> 
-  et la <strong class="gastronomie">gastronomie</strong>. 
-  Découvrez les talents locaux et les traditions qui font la richesse de ce pays.
+ <p class="text-center no-wrap">
+  <strong>DAWIN</strong> vous invite à une soirée culturelle exceptionnelle.
 </p>
+
+  <!-- TEXTE 2 -->
+  <p>
+    Une immersion dans l'âme de la Guinée-Bissau à travers la 
+    <strong class="musique">musique</strong>, 
+    la <strong class="danse">danse</strong> 
+    et la <strong class="gastronomie">gastronomie</strong>. 
+    Découvrez les talents locaux et les traditions qui font la richesse de ce pays.
+  </p>
 
   <!-- CULTURE -->
   <div class="block img-wrap">
     <img src="assets/culture.jpg" alt="">
-    <div class="badge-inline">
-</div>
-
   </div>
 
-  <h3 class="section-title">VISION & AVENIR</h3>
+  <h3 class="section-title">VISION ET AVENIR</h3>
   <p>
     Cette soirée met en lumière le potentiel touristique et les opportunités d'investissement en Guinée-Bissau car
     le pays regorge de trésors naturels et humains qui ne demandent qu'à être valorisés.
@@ -310,7 +281,6 @@ button{
   <!-- IMAGE 3 -->
   <div class="block img-wrap">
     <img src="assets/nature.jpg" alt="">
-    
   </div>
 
   <!-- RSVP -->
