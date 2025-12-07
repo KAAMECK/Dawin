@@ -26,6 +26,25 @@ body{
   color:#000;
 }
 
+.musique {
+  color: #b82022; /* Rouge profond */
+}
+
+.danse {
+  color: #850885; /* Rose violacé élégant */
+}
+
+.gastronomie {
+  color: #ff36ab; /* Doré doux */
+}
+
+.musique:hover,
+.danse:hover,
+.gastronomie:hover {
+  text-decoration: underline;
+  cursor: default;
+}
+
 .container{
   max-width:430px;
   margin:0 auto;
@@ -165,7 +184,10 @@ p{
   color: var(--fond-blanc);
 }
 
-
+.info-label svg {
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
 
 .rsvp{
   text-align:center;
@@ -245,7 +267,6 @@ button{
   </div>
 </div>
 
-
   <!-- TEXTE 1 -->
   <p class="text-center">
     L'agence DAWIN vous invite à une<br>
@@ -255,15 +276,22 @@ button{
   <!-- INFOS -->
   <div class="info-box">
     <div class="info-item">
-      <div class="info-label">A</div>
-      <div class="info-value">Dakar</div>
+  <div class="info-label">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#7d7d7d" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+    </svg>
+  </div>
+    <div class="info-value">Dakar</div>
     </div>
   </div>
 
   <p>
-    Une immersion dans l'âme de la Guinée-Bissau à travers la <strong>musique</strong>, la <strong>danse</strong> et la <strong>gastronomie</strong>.
-    Découvrez les talents locaux et les traditions qui font la richesse de ce pays.
-  </p>
+  Une immersion dans l'âme de la Guinée-Bissau à travers la 
+  <strong class="musique">musique</strong>, 
+  la <strong class="danse">danse</strong> 
+  et la <strong class="gastronomie">gastronomie</strong>. 
+  Découvrez les talents locaux et les traditions qui font la richesse de ce pays.
+</p>
 
   <!-- CULTURE -->
   <div class="block img-wrap">
