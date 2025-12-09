@@ -347,7 +347,15 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   params.append("email", email);
   params.append("tel", tel);
 
-  fetch("https://script.google.com/macros/s/AKfycbwrw-yL6dhE8AOkNWM2yYeMhKWqW0wZWv-ixT_FbiWjLvBieStrIEjWl9Jk-RisT7KQ/exec", {
+  const payload = { nom, email, tel };
+
+fetch("https://script.google.com/macros/s/AKfycbwrw-yL6dhE8AOkNWM2yYeMhKWqW0wZWv-ixT_FbiWjLvBieStrIEjWl9Jk-RisT7KQ/exec", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(payload)
+})
+
+  fetch("https://script.google.com/macros/s/AKfycbxwoeDlRU19GGp-Qc7KKKAG1H94O5I20-37tJJPw7b21TAdR8c1ugyO0XMsg2v3P_eZ/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
